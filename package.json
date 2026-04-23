@@ -12,7 +12,8 @@
     "start": "serve -s dist -l tcp://0.0.0.0:3000",
     "lint": "eslint .",
     "preview": "vite preview",
-    "setup": "node scripts/setup.mjs"
+    "setup": "node scripts/setup.mjs",
+    "install:server": "bash scripts/install.sh"
   },
   "dependencies": {
     "serve": "^14.2.4",
