@@ -192,7 +192,7 @@ main() {
     pm2 start ecosystem.config.cjs
     pm2 save
     log "Concluído. Comandos: pm2 list | pm2 logs stiffer"
-    log "Site em http://0.0.0.0:3000 (ponha Nginx/Caddy à frente se usar domínio/HTTPS)"
+    log "Site em http://0.0.0.0:6173 (abra no browser com o IP público e esta porta; firewall ufw allow 6173/tcp se preciso)"
   else
     log "PM2 ignorado. Testar: npm run start"
   fi

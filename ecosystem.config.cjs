@@ -13,8 +13,10 @@ module.exports = {
       autorestart: true,
       watch: false,
       max_memory_restart: '200M',
+      // PORT alinhado com script "start" em package.json (>6000)
       env: {
         NODE_ENV: 'production',
+        PORT: '6173',
       },
     },
   ],
