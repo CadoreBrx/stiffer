@@ -3,7 +3,7 @@
  * Ajuste se o escritório usar outro e-mail ou sede.
  */
 
-/** Definido em `.env` (VITE_SITE_URL) pelo script de instalação; usado em SEO/links canónicos. */
+/** Definido em `.env` / `.env.production` (VITE_SITE_URL); usado em SEO/links canónicos. */
 const envUrl = import.meta.env.VITE_SITE_URL
 export const publicSiteUrl =
   typeof envUrl === 'string' && envUrl.length > 0

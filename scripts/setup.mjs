@@ -19,8 +19,13 @@ for (const a of process.argv.slice(2)) {
 }
 
 if (domain) {
-  let url = domain
-  if (!/^https?:\/\//i.test(url)) url = `https://${url}`
+  let url = domain.trim()
+  if (!/^https?:\/\//i.test(url)) {
+    const hostOnly = url.split('/')[0]
+    const ipv4WithOptionalPort =
+      /^(\d{1,3}\.){3}\d{1,3}(:\d{1,5})?$/i.test(hostOnly)
+    url = ipv4WithOptionalPort ? `http://${url}` : `https://${url}`
+  }
   url = url.replace(/\/$/, '')
   const content = `# Gerado por scripts/setup.mjs\nVITE_SITE_URL=${url}\n`
   writeFileSync(path.join(root, '.env'), content, 'utf8')
