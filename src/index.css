@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/*
+  Paleta centrada em azul: navy para superfícies escuras, azul vivo para destaque.
+  TODO(brand): alinhar aos hex oficiais do manual da Construtora Piffer se houver.
+ */
+:root {
+  --piffer-primary: #06192f;
+  --piffer-primary-mid: #0c3a6e;
+  --piffer-primary-soft: #1558a3;
+  --piffer-accent: #3b9eff;
+  --piffer-accent-soft: rgba(59, 158, 255, 0.16);
+  --piffer-accent-hover: #5aadff;
+  --piffer-bg: #eef4fb;
+  --piffer-surface: #ffffff;
+  --piffer-muted: #556a80;
+  --piffer-heading: #051525;
+  --piffer-border: rgba(6, 25, 47, 0.12);
+  --piffer-hero-overlay: linear-gradient(
+    125deg,
+    rgba(6, 25, 47, 0.93) 0%,
+    rgba(6, 25, 47, 0.58) 38%,
+    rgba(12, 58, 110, 0.4) 58%,
+    rgba(21, 88, 163, 0.22) 100%
+  );
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--piffer-heading);
+  background: var(--piffer-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+::selection {
+  background: var(--piffer-accent-soft);
+  color: var(--piffer-primary);
+}
