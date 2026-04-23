@@ -7,7 +7,8 @@
 # Variáveis (opcional):
 #   STIFFER_REPO   URL do git (default: https://github.com/CadoreBrx/stiffer.git)
 #   STIFFER_DIR    Pasta do projeto (default: ~/stiffer se não estiver dentro do repo)
-#   STIFFER_DOMAIN domínio público → gera .env e npm run setup (ex: www.site.com.br)
+#   STIFFER_DOMAIN     domínio/IP → npm run setup (sobrescreve .env)
+#   STIFFER_PUBLIC_URL fallback do URL mostrado no fim (se .env.production não tiver VITE_SITE_URL)
 #   SKIP_NODE=1   não instala Node via apt
 #   SKIP_PM2=1    não instala nem arranca PM2
 
@@ -16,12 +17,23 @@ set -euo pipefail
 STIFFER_REPO="${STIFFER_REPO:-https://github.com/CadoreBrx/stiffer.git}"
 STIFFER_DIR="${STIFFER_DIR:-$HOME/stiffer}"
 STIFFER_DOMAIN="${STIFFER_DOMAIN:-}"
+STIFFER_PUBLIC_URL="${STIFFER_PUBLIC_URL:-http://206.183.131.181:6173}"
 
 SKIP_NODE="${SKIP_NODE:-0}"
 SKIP_PM2="${SKIP_PM2:-0}"
 
 log() { printf '\033[1;36m[stiffer]\033[0m %s\n' "$*"; }
 die() { printf '\033[1;31m[stiffer]\033[0m %s\n' "$*" >&2; exit 1; }
+
+# URL pública (browser) a partir de .env.production — não confundir com bind 0.0.0.0 do Node
+vite_public_url() {
+  local root="$1"
+  local f="$root/.env.production"
+  [[ -f "$f" ]] || return 1
+  grep -m1 '^[[:space:]]*VITE_SITE_URL=' "$f" 2>/dev/null \
+    | sed -e 's/^[[:space:]]*VITE_SITE_URL=//' -e 's/[[:space:]]*#.*$//' -e 's/\r$//' \
+      -e 's/^"//' -e 's/"$//' -e "s/^'//" -e "s/'$//"
+}
 
 run_as_root() {
   if [[ "$(id -u)" -eq 0 ]]; then
@@ -178,7 +190,11 @@ main() {
     log "Setup com domínio: $STIFFER_DOMAIN"
     npm run setup -- "--domain=$STIFFER_DOMAIN"
   else
-    log "Build (sem --domain; defina STIFFER_DOMAIN se precisar de VITE_SITE_URL)"
+    if [[ -f "$ROOT/.env.production" ]] && grep -q '^[[:space:]]*VITE_SITE_URL=' "$ROOT/.env.production" 2>/dev/null; then
+      log "Build com VITE_SITE_URL do ficheiro .env.production"
+    else
+      log "Build (sem STIFFER_DOMAIN; sem VITE_SITE_URL em .env.production — canonical pode ficar vazio)"
+    fi
     npm run build
   fi
 
@@ -192,7 +208,12 @@ main() {
     pm2 start ecosystem.config.cjs
     pm2 save
     log "Concluído. Comandos: pm2 list | pm2 logs stiffer"
-    log "Site em http://0.0.0.0:6173 (abra no browser com o IP público e esta porta; firewall ufw allow 6173/tcp se preciso)"
+    local browser_url
+    browser_url="$(vite_public_url "$ROOT" || true)"
+    browser_url="${browser_url:-$STIFFER_PUBLIC_URL}"
+    log "O servidor escuta em 0.0.0.0:6173 (todas as interfaces da VPS — é o comportamento normal)."
+    log "No browser use este endereço: ${browser_url}"
+    log "Se não abrir fora do servidor: ufw allow 6173/tcp && ufw reload"
   else
     log "PM2 ignorado. Testar: npm run start"
   fi
