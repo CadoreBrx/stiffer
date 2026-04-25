@@ -11,32 +11,29 @@ export function Hero() {
       id="inicio"
       className="relative min-h-[100dvh] overflow-hidden bg-[var(--piffer-primary)] lg:min-h-[min(100dvh,1100px)]"
     >
-      {/* Camadas de fundo (não entram no grid) */}
+      {/* Banner com imagem grande em tela cheia */}
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
-        <div
-          className="absolute inset-0 bg-[length:cover] bg-[position:center_25%] bg-no-repeat lg:hidden"
-          style={{ backgroundImage: `url(${facadeImage})` }}
+        <img
+          src={facadeImage}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         <div
-          className="absolute inset-0 lg:hidden"
-          style={{ background: 'var(--piffer-hero-overlay)' }}
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(104deg, rgba(6, 25, 47, 0.92) 0%, rgba(6, 25, 47, 0.76) 40%, rgba(6, 25, 47, 0.3) 100%)',
+          }}
         />
         <div className="absolute -left-20 top-1/3 h-80 w-80 rounded-full bg-[var(--piffer-accent)]/14 blur-3xl lg:left-0" />
         <div className="absolute left-1/3 top-1/2 h-[28rem] w-[28rem] -translate-y-1/2 rounded-full bg-[var(--piffer-primary-soft)]/20 blur-3xl lg:left-1/4" />
         <div className="absolute -right-10 bottom-0 h-72 w-72 rounded-full bg-[var(--piffer-primary-mid)]/45 blur-3xl lg:-right-5" />
       </div>
 
-      <div className="relative z-10 grid min-h-[100dvh] lg:min-h-[min(100dvh,1100px)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
-        {/* Conteúdo */}
-        <div className="relative mx-auto flex w-full max-w-6xl flex-col justify-center px-4 pb-24 pt-32 sm:px-6 lg:mx-0 lg:max-w-none lg:px-10 lg:pb-20 lg:pt-28 xl:pl-16 xl:pr-8">
-          <div className="hidden lg:absolute lg:inset-0 lg:-z-10 lg:block lg:bg-[var(--piffer-primary)]" />
-          <div
-            className="hidden lg:absolute lg:inset-0 lg:-z-10 lg:block"
-            style={{
-              background:
-                'linear-gradient(105deg, rgba(6, 25, 47, 0.97) 0%, rgba(6, 25, 47, 0.82) 45%, rgba(6, 25, 47, 0.15) 100%)',
-            }}
-          />
+      <div className="relative z-10 mx-auto flex min-h-[100dvh] max-w-6xl flex-col justify-center px-4 pb-24 pt-32 sm:px-6 lg:px-12 lg:pb-20 lg:pt-28 xl:px-16">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -107,23 +104,6 @@ export function Hero() {
               <p className="text-white/50">Acompanhamento de ponta a ponta</p>
             </div>
           </motion.div>
-        </div>
-
-        {/* Fachada — coluna larga (desktop) */}
-        <div className="relative hidden min-h-0 lg:block">
-          <img
-            src={facadeImage}
-            alt="Fachada do Residencial Adelina Sbors — Guabiruba, SC"
-            className="absolute inset-0 h-full w-full object-cover object-center"
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-          />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[var(--piffer-primary)]/50 via-transparent to-transparent" />
-          <p className="absolute bottom-6 right-6 max-w-xs rounded-sm bg-black/35 px-3 py-1.5 text-right text-xs text-white/90 backdrop-blur-sm">
-            Fachada — Residencial Adelina Sbors
-          </p>
-        </div>
       </div>
     </section>
   )

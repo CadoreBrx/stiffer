@@ -50,20 +50,6 @@ export const empreendimentos: Empreendimento[] = [
     ],
     mapUrl: 'https://maps.app.goo.gl/ZNRiDpJYi3o57jv28',
   },
-  {
-    id: 'adelina',
-    title: 'Residencial Adelina Sbors',
-    tagline: 'Residencial multifamiliar',
-    address: 'Rua Francisco José Schmidt, Centro',
-    city: 'Guabiruba, SC',
-    image: '/empreendimentos/adelina/page-0002.png',
-    gallery: pages('adelina', 1, 21),
-    stats: [
-      { label: 'Apartamentos', value: '25' },
-      { label: 'Perfil', value: 'Multifamiliar' },
-    ],
-    mapUrl: 'https://maps.app.goo.gl/dUHYXcTWABHF3k7d9',
-  },
 ]
 
 export function getEmpreendimentoBySlug(slug: string | undefined) {
