@@ -7,33 +7,24 @@ const facadeImage = '/empreendimentos/adelina/page-0002.png'
 
 export function Hero() {
   return (
-    <section
-      id="inicio"
-      className="relative min-h-[100dvh] overflow-hidden bg-[var(--piffer-primary)] lg:min-h-[min(100dvh,1100px)]"
-    >
-      {/* Banner com imagem grande em tela cheia */}
-      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
+    <section id="inicio" className="bg-[var(--piffer-primary)]">
+      {/* Banner apenas com a foto (sem texto sobreposto) */}
+      <div className="relative h-[62dvh] min-h-[420px] w-full overflow-hidden sm:h-[70dvh] lg:h-[78dvh] lg:min-h-[680px]">
         <img
           src={facadeImage}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          alt="Fachada de empreendimento da Construtora Piffer"
+          className="h-full w-full object-cover object-center"
           loading="eager"
           fetchPriority="high"
           decoding="async"
         />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(104deg, rgba(6, 25, 47, 0.92) 0%, rgba(6, 25, 47, 0.76) 40%, rgba(6, 25, 47, 0.3) 100%)',
-          }}
-        />
-        <div className="absolute -left-20 top-1/3 h-80 w-80 rounded-full bg-[var(--piffer-accent)]/14 blur-3xl lg:left-0" />
-        <div className="absolute left-1/3 top-1/2 h-[28rem] w-[28rem] -translate-y-1/2 rounded-full bg-[var(--piffer-primary-soft)]/20 blur-3xl lg:left-1/4" />
-        <div className="absolute -right-10 bottom-0 h-72 w-72 rounded-full bg-[var(--piffer-primary-mid)]/45 blur-3xl lg:-right-5" />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-[100dvh] max-w-6xl flex-col justify-center px-4 pb-24 pt-32 sm:px-6 lg:px-12 lg:pb-20 lg:pt-28 xl:px-16">
+      {/* Texto movido para baixo do banner */}
+      <div className="relative">
+        <div className="pointer-events-none absolute -left-20 top-1/4 h-72 w-72 rounded-full bg-[var(--piffer-accent)]/14 blur-3xl" />
+        <div className="pointer-events-none absolute right-0 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-[var(--piffer-primary-soft)]/20 blur-3xl" />
+        <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-14 sm:px-6 lg:px-12 lg:pb-24 lg:pt-16 xl:px-16">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -104,6 +95,7 @@ export function Hero() {
               <p className="text-white/50">Acompanhamento de ponta a ponta</p>
             </div>
           </motion.div>
+        </div>
       </div>
     </section>
   )

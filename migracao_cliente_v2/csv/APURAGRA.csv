@@ -1,0 +1,14 @@
+﻿REGISTRO,PMES,NRMES,MES,ANO,INICIO,FIM,VENDAS,VENDASM,NRVENDAS,ORDEM,ORDEMM,NRORDEM,NRCLIENTE,PROCESSO
+1,True,1,Janeiro,2026,,,134340.0,1138.47,118,,,,26,OK
+2,True,2,Fevereiro,2026,,,98570.0,975.94,101,,,,25,OK
+3,True,3,Marco,2026,,,75442.31,802.58,94,,,,28,OK
+4,True,4,Abril,2026,,,0.0,0.0,0,,,,0,OK
+5,True,5,Maio,2026,,,0.0,0.0,0,,,,0,OK
+6,True,6,Junho,2026,,,0.0,0.0,0,,,,0,OK
+7,True,7,Julho,2026,,,0.0,0.0,0,,,,0,OK
+8,True,8,Agosto,2026,,,0.0,0.0,0,,,,0,OK
+9,True,9,Setembro,2026,,,0.0,0.0,0,,,,0,OK
+10,True,10,Outubro,2026,,,0.0,0.0,0,,,,0,OK
+11,True,11,Novembro,2026,,,0.0,0.0,0,,,,0,OK
+12,True,12,Dezembro,2026,,,0.0,0.0,0,,,,0,OK
+,,,TOTAL,,,,308352.31,243.08,313,,,,79,

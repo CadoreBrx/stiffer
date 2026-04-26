@@ -1,0 +1,31 @@
+﻿CONTA,SMTP,SERVIDOR,REMETENTE,LOGIN,SENHA,USUARIO,PORTA,AUTENTICA,TEXTO,ASSUNTO,MTEXTO,MHTML
+GMAIL,smtp.gmail.com,@gmail.com,,,,,465,True,"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+______________________
+Ass: Meu  nome
+meu telefone
+",,False,True
+UOL,smtp.uol.com.br,@uol.com.br,,,,,587,False,,,False,True
+BOL,smtp.bol.com.br,@bol.com.br,,,,,587,True,,,False,True
+TERRA,smtp.terra.com.br,@terra.com.br,,,,,587,True,,,False,True
+IG,smtp.ig.com.br,@ig.com.br,,,,,465,True,,,False,True
+IBEST,smtp.ibest.com.br,@ibest.com.br,,,,,465,True,,,False,True
+ITELEFONICA,smtp.itelefonica.com.br,@itelefonica.com.br,,,,,587,True,,,False,True
+POP,smpt.pop.com.br,@pop.com.br,,,,,587,True,,,True,False
+HOTMAIL NOVO,smtp.live.com,@hotmail.com,,,,,587,True,,,True,False
+YAHOO,smtp.mail.yahoo.com.br,@yahoo.com.br,,,,,465,True,,,True,False
+GLOBO.COM,smtp.globo.com,@globo.com,,,,,587,True,,,True,False

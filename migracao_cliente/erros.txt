@@ -1,0 +1,10 @@
+[ERRO] PADRAOA.DBF: unpack requires a buffer of 32 bytes
+[ERRO] PADRAOP.DBF: unpack requires a buffer of 32 bytes
+[ERRO] PRODUTOS.DBF: duplicate column name: QUANTIDADE
+[ERRO] PRODUTOSo.DBF: duplicate column name: QUANTIDADE
+[ERRO] SERIE.DBF: unpack requires a buffer of 32 bytes
+[ERRO] SITUA.DBF: unpack requires a buffer of 32 bytes
+[ERRO] TECNICO3.DBF: unpack requires a buffer of 32 bytes
+[ERRO] TIPO.DBF: unpack requires a buffer of 32 bytes
+[ERRO] TIPOCLI.DBF: unpack requires a buffer of 32 bytes
+[ERRO] WHATS3.DBF: unpack requires a buffer of 32 bytes

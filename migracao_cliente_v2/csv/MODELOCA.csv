@@ -1,0 +1,86 @@
+﻿REGISTRO,MODELO,TAMANHO,FONTE,LARGURA,LINHAMAX,ALTURA,MARGEME,LINHAINI,NORMAL,NEGRITO,ITALICO,TEXTO
+1,EXEMPLO DE MACROS NA CARTA,10.0,Arial,110.0,29.0,0.5,1.0,1.0,True,False,False,"<data_semana>
+
+Prezados Senhores:
+
+
+A <nome_emp> lhes dá as boas-vindas e com prazer inclui seu nome na lista de novos clientes.
+
+Esperamos servi-los cada vez melhor; essa é nossa forma de mostrar a satisfação por seu primeiro pedido.
+
+Estamos em alerta permanente quanto ao controle de qualidade, para que nosso produto seja o melhor da praça.
+
+Agradecemos a atenção e solicitamos a fineza de confirmarem o recebimento.
+
+
+Atenciosamente,"
+2,BOAS VINDAS,9.0,Arial,100.0,27.0,0.4,1.0,1.0,True,False,False,"<data_semana>
+
+Prezados Senhores:
+
+
+A <nome_emp> lhes dá as boas-vindas e com prazer inclui seu nome na lista de novos clientes.
+
+Esperamos servi-los cada vez melhor; essa é nossa forma de mostrar a satisfação por seu primeiro pedido.
+
+Estamos em alerta permanente quanto ao controle de qualidade, para que nosso produto seja o melhor da praça.
+
+Agradecemos a atenção e solicitamos a fineza de confirmarem o recebimento.
+
+
+Atenciosamente,"
+3,CARTA COBRANÇA 3,11.0,Arial,100.0,29.0,0.5,1.0,1.0,True,False,False,"<data_semana>
+
+
+[Nome], 
+
+Não consta, em nossos controles, o pagamento da fatura vencida em [data]. 
+
+Entre em contato conosco pelo telefone (XX) XXXX.XXXX para que possamos solucionar essa pendência. Caso já tenha efetuado o pagamento, favor desconsiderar esta correspondência. 
+
+
+Atenciosamente, 
+
+
+<cnpj_emp>"
+4,CARTA COBRANÇA,11.0,Arial,100.0,29.0,0.5,1.0,1.0,True,False,False,"<data_semana>
+
+
+
+<nome_emp>
+<cnpj_emp>
+
+AT.: DEP. CONTAS À PAGAR
+
+Prezados Senhores,
+
+
+Até hoje não entendemos por que não recebemos resposta a nossa primeira carta, com referência ao vencimento da Nota Promissória nº número da nota promissória. Será que foi endereçada para a pessoa errada? Caso tenha sido, por favor, encaminhe-a ao departamento ou pessoa competente.
+Aguardamos resposta nos próximos número de dias dias, sem o que tomaremos as devidas providências.
+
+
+Atentamente,
+"
+5,CARTA COBRANÇA 2,11.0,Arial,100.0,29.0,0.5,1.0,1.0,True,False,False,"<data_semana>
+
+
+
+Prezado Senhor...
+
+
+Sentimos muito ter de lembrá-lo que sua conta continua em atraso.
+
+Sempre tivemos intenção de servi-lo da melhor maneira possível, mas em troca suas contas seriam pagas pontualmente, como havíamos combinado.
+
+Nós cumprimos a nossa parte, esperamos que o senhor cumpra a sua.
+
+Por favor, mande-nos o cheque referente à duplicata vencida dia 06 de agosto.
+
+Obrigado pela cooperação.
+
+Cordialmente,
+
+<nome_emp>
+<cnpj_emp>
+
+<nome_usuario> - gerente."
