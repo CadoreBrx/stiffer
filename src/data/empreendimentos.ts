@@ -37,6 +37,20 @@ export const empreendimentos: Empreendimento[] = [
     mapUrl: 'https://maps.app.goo.gl/zymWYtt6CtL125r38',
   },
   {
+    id: 'vitali',
+    title: 'Studios Vitali',
+    tagline: 'Residencial multifamiliar',
+    address: 'Rua Mathias Moritz, 325, Santa Terezinha',
+    city: 'Brusque, SC',
+    image: '/empreendimentos/vitali/page-0001.png',
+    gallery: pages('vitali', 1, 23),
+    stats: [
+      { label: 'Studios', value: '34' },
+      { label: 'Vagas', value: '35' },
+    ],
+    mapUrl: 'https://maps.app.goo.gl/PsApu3wKymjn8EiB7',
+  },
+  {
     id: 'verona',
     title: 'Residencial Verona',
     tagline: 'Conforto e localização',
